@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsPage</class>
+ <widget class="QWidget" name="SettingsPage">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1200</width><height>760</height></rect>
+  </property>
+  <property name="windowTitle"><string>Configuration</string></property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text"><string>Configuration des tables liées aux personnes</string></property>
+     <property name="styleSheet"><string notr="true">font-size: 20px; font-weight: 600;</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSplitter" name="mainSplitter">
+     <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+     <widget class="QWidget" name="tablesPanel">
+      <layout class="QVBoxLayout" name="tablesPanelLayout">
+       <item><widget class="QLabel" name="tablesLabel"><property name="text"><string>Tables liées</string></property><property name="styleSheet"><string notr="true">font-weight: 600;</string></property></widget></item>
+       <item>
+        <widget class="QTableWidget" name="customTablesTable">
+         <property name="selectionBehavior"><enum>QAbstractItemView::SelectionBehavior::SelectRows</enum></property>
+         <property name="selectionMode"><enum>QAbstractItemView::SelectionMode::SingleSelection</enum></property>
+         <property name="editTriggers"><set>QAbstractItemView::EditTrigger::NoEditTriggers</set></property>
+         <column><property name="text"><string>Libellé</string></property></column>
+         <column><property name="text"><string>Nom technique</string></property></column>
+         <column><property name="text"><string>Multiple</string></property></column>
+         <column><property name="text"><string>Ordre</string></property></column>
+         <column><property name="text"><string>Active</string></property></column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="tableButtonsLayout">
+         <item><widget class="QPushButton" name="addCustomTableButton"><property name="text"><string>Ajouter</string></property></widget></item>
+         <item><widget class="QPushButton" name="editCustomTableButton"><property name="text"><string>Modifier</string></property></widget></item>
+         <item><widget class="QPushButton" name="deleteCustomTableButton"><property name="text"><string>Supprimer</string></property></widget></item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="fieldsPanel">
+      <layout class="QVBoxLayout" name="fieldsPanelLayout">
+       <item>
+        <layout class="QHBoxLayout" name="fieldHeaderLayout">
+         <item><widget class="QLabel" name="fieldsLabel"><property name="text"><string>Champs de la table</string></property><property name="styleSheet"><string notr="true">font-weight: 600;</string></property></widget></item>
+         <item><widget class="QComboBox" name="fieldTableComboBox"/></item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="customFieldsTable">
+         <property name="selectionBehavior"><enum>QAbstractItemView::SelectionBehavior::SelectRows</enum></property>
+         <property name="selectionMode"><enum>QAbstractItemView::SelectionMode::SingleSelection</enum></property>
+         <property name="editTriggers"><set>QAbstractItemView::EditTrigger::NoEditTriggers</set></property>
+         <column><property name="text"><string>Libellé</string></property></column>
+         <column><property name="text"><string>Nom technique</string></property></column>
+         <column><property name="text"><string>Type</string></property></column>
+         <column><property name="text"><string>Obligatoire</string></property></column>
+         <column><property name="text"><string>Ordre</string></property></column>
+         <column><property name="text"><string>CSV</string></property></column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="fieldButtonsLayout">
+         <item><widget class="QPushButton" name="addCustomFieldButton"><property name="text"><string>Ajouter</string></property></widget></item>
+         <item><widget class="QPushButton" name="editCustomFieldButton"><property name="text"><string>Modifier</string></property></widget></item>
+         <item><widget class="QPushButton" name="deleteCustomFieldButton"><property name="text"><string>Supprimer</string></property></widget></item>
+         <item><spacer name="fieldSpacer"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property></spacer></item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
